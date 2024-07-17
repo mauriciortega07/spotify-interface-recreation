@@ -1,0 +1,1041 @@
+body {
+
+    @include main-grid;
+
+    @include size1182px {
+        grid-template-columns: 19rem 30rem 19rem;
+
+    }
+
+    @include size1020px {
+        grid-template-columns: 5.5rem 37rem 19rem;
+    }
+
+    /* -------- estructura del aside izquierdo ----------------*/
+    .aside {
+        @include aside-style;
+
+        &__user {
+            @include article-style;
+
+            div {
+                @include list-style;
+
+                p {
+                    @extend %fontStyle;
+                    @include aStyles;
+
+                    &:hover {
+                        @extend %underlineHover;
+                    }
+
+                    @include size1020px {
+                        width: 0px;
+                        opacity: 0;
+                    }
+
+                }
+
+                @include size1020px {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .container-user {
+            @include article-style-container-user;
+
+            &__icon {
+                @include div-style (flex, center, space-between, pxTorem(0, rem));
+                @extend %fontStyle;
+
+
+                &--disc {
+                    @include div-style--disc;
+
+                    &:hover {
+                        @extend %hoverwhite2seg;
+                    }
+
+                    p {
+                        @include size1020px {
+                            display: none;
+                        }
+                    }
+                }
+
+                &--plus {
+                    @include div-style--plus;
+
+                    @include size1020px {
+                        display: none;
+                    }
+
+                }
+
+                @include size1020px {
+                    justify-content: center;
+                }
+            }
+
+            &__buttons {
+                @extend %buttonsContainer;
+                margin: 0px;
+                width: 100%;
+            }
+
+
+            &__artist {
+                @include div-style--artist (flex, center, flex-start, column, 100%);
+
+                &::-webkit-scrollbar {
+                    @extend %scrollBar;
+
+                    @include size1020px {
+                        display: none;
+                    }
+                }
+
+                &:hover {
+                    &::-webkit-scrollbar-thumb {
+                        @extend %scrollBarHover;
+                    }
+
+                }
+
+
+
+                .container-user__icon--secondary {
+                    @include div-style (flex, center, flex-start);
+                    @extend %fontStyle;
+
+                    ul {
+                        @include list-style
+                    }
+
+                    a {
+                        @extend %fontStyle;
+                        @include aStyles (0.8rem, flex-end);
+                    }
+
+                    @include size1020px {
+                        display: none;
+                    }
+
+                }
+
+
+                .artist-card {
+                    @include div-style(flex, center, flex-start);
+
+                    &__info {
+                        @include div-style (flex, flex-start, flex-start, column, 70%, pxTorem(5, rem));
+
+                        @include size1020px {
+                            display: none;
+                        }
+                    }
+                }
+
+                @include size1020px {
+                    align-items: baseline;
+                }
+
+            }
+
+
+
+        }
+    }
+
+    /* -------- estructura de la seccion artista ----------------*/
+    .artist {
+        @include main-style;
+
+        &__container {
+            @include artist-container;
+
+            &::-webkit-scrollbar {
+                @extend %scrollBar;
+            }
+
+            &:hover {
+                &::-webkit-scrollbar-thumb {
+                    @extend %scrollBarHover;
+
+                }
+            }
+
+            /* -------- estructura del banner de la seccion artista ----------------*/
+            &--banner {
+                @include artist__container--banner;
+
+                .nav__buttons {
+                    @include nav__user-styles;
+
+                    @include size1182px {
+                        width: 35%;
+
+                    }
+
+                    &-left-right {
+                        @include div__nav-styles;
+                    }
+
+                    &-premium {
+                        @include div__nav-styles(pxTorem(10, rem));
+                    }
+                }
+
+                .artist-info {
+                    @include artist-info;
+
+                    section {
+                        .artist-name {
+                            @extend %artistName;
+
+                            @include size1182px {
+                                font-size: 5rem;
+                                margin-top: 10px;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            /* -------- estructura del contendor de iconos de play de la seccion artista ----------------*/
+
+            &--play {
+                @include artist__container--play;
+
+                .controls-play {
+                    @include controls-play;
+                }
+
+                /* -------- estructura de canciones pupulares de la seccion artista ----------------*/
+
+                .grid-popular {
+                    @include grid-popular;
+
+                    &__title {
+                        @include grid-title;
+
+                        h2 {
+                            @include popular-style;
+                        }
+                    }
+
+                    &__songs {
+                        @include grid-songs;
+
+                        &--card {
+                            @include grid-songs-card;
+
+                            &:hover {
+                                @extend %gridSongsCardHover;
+                            }
+
+                            .num-song {
+                                @include flex-num-song;
+                            }
+
+                            .song {
+                                @extend %flexCenter;
+
+                                a {
+                                    @include song-name;
+                                }
+                            }
+
+                            .reproductions {
+                                @extend %flexCenter;
+                                @include rep-dur-style ($margin-left: pxTorem(20, rem));
+
+                                &:hover {
+                                    .icons-options {
+                                        @extend %iconsOptionsHover;
+                                    }
+                                }
+                            }
+
+                            .duration {
+                                @extend %flexCenter;
+                                @include rep-dur-style ($margin-left: pxTorem(16, rem), $gap: pxTorem(16, rem));
+
+                                .icons-options {
+                                    @include icons-options;
+                                }
+
+                                &:hover {
+                                    .icons-options {
+                                        @extend %iconsOptionsHover;
+                                    }
+                                }
+
+                            }
+
+                            @include size1020px {
+                                grid-template-columns: 16px 227px 100px 87px;
+                            }
+                        }
+                    }
+
+                    &__more {
+                        @include grid-popular__more;
+
+                        .more {
+                            a {
+                                @include show-all;
+
+                                &:hover {
+                                    @extend %moreHover;
+                                }
+                            }
+                        }
+
+                    }
+
+                    @include size1020px {
+                        grid-template-columns: repeat(3, 192px);
+                    }
+                }
+            }
+
+            /* -------- estructura de la discografia de la seccion artista ----------------*/
+
+            &--discography {
+                @include artist__container--discography;
+
+                .discography__header {
+                    @include discography__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    &--show-all {
+                        a {
+                            @include show-all;
+                        }
+
+                        a:hover {
+                            @extend %showAllHover;
+                        }
+                    }
+
+                }
+
+                .discography__nav {
+                    @include discography__nav;
+                }
+
+                .discography__albums {
+                    @include discography__albums;
+
+                    &--card {
+                        @include discography__albums--card;
+
+                        &:hover {
+                            @extend %discographyAlbumsCardHover;
+                        }
+
+                        .album-name {
+                            @include album-name;
+                        }
+
+                        .date {
+                            @include date;
+                        }
+
+                        @include size1020px {
+                            padding: 0px;
+                        }
+                    }
+
+                }
+
+                @include size1020px {
+                    grid-template-columns: repeat(3, 12rem);
+                }
+            }
+
+            /* -------- estructura de "Con Mano Negra" de la seccion artista ----------------*/
+
+            &--with {
+                @include artist__container--with;
+
+                .with__header {
+                    @include with__header;
+
+                    &--title {
+                        h2 {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    &--show-all {
+                        a {
+                            @include show-all;
+                        }
+
+                        a:hover {
+                            @extend %showAllHover;
+                        }
+                    }
+
+                }
+
+                .with__playlist {
+                    @include with__playlist;
+
+                    &--card {
+                        @include with__playlist--card;
+
+                        &:hover {
+                            @extend %discographyAlbumsCardHover;
+                        }
+
+                        .playlist-name {
+                            @include playlist-name;
+                        }
+
+                        .playlist-description {
+                            @include playlist-description;
+                        }
+
+                        @include size1020px {
+                            padding: 0px;
+                        }
+                    }
+
+                }
+
+                @include size1020px {
+                    grid-template-columns: repeat(3, 12rem);
+                }
+            }
+
+            /* -------- estructura de "a los fans tambien les gusta"----------------*/
+
+            &--fans {
+                @include artist__container--with;
+
+                .fans__header {
+                    @include with__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    &--show-all {
+                        a {
+                            @include show-all;
+                        }
+
+                        a:hover {
+                            @extend %showAllHover;
+                        }
+                    }
+
+                }
+
+                .fans__playlist {
+                    @include with__playlist;
+
+                    &--card {
+                        @include with__playlist--card;
+
+                        &:hover {
+                            @extend %discographyAlbumsCardHover;
+                        }
+
+                        .playlist-name {
+                            @include playlist-name;
+                        }
+
+                        .playlist-description {
+                            @include playlist-description;
+                        }
+
+                        @include size1020px {
+                            padding: 0px;
+                        }
+                    }
+
+                }
+
+                @include size1020px {
+                    grid-template-columns: repeat(3, 12rem);
+                }
+            }
+
+            /* -------- estructura de "aparece en"----------------*/
+
+            &--appears {
+                @include artist__container--with;
+
+                .appears__header {
+                    @include with__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+
+                .appears__playlist {
+                    @include with__playlist (start, $margin: pxTorem(5, rem));
+
+                    &--card {
+                        @include with__playlist--card;
+
+                        &:hover {
+                            @extend %discographyAlbumsCardHover;
+                        }
+
+                        .playlist-name {
+                            @include playlist-name;
+                        }
+
+                        .date {
+                            @include date;
+                        }
+                    }
+
+                }
+
+                @include size1020px {
+                    grid-template-columns: repeat(3, 12rem);
+                }
+            }
+
+            /* -------- estructura de "playlist del artista"----------------*/
+
+            &--playlist-artist {
+                @include artist__container--with;
+
+                .playlist-artist__header {
+                    @include with__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+
+                .playlist-artist__playlist {
+                    @include with__playlist (start, $margin: pxTorem(5, rem));
+
+                    &--card {
+                        @include with__playlist--card;
+
+                        &:hover {
+                            @extend %discographyAlbumsCardHover;
+                        }
+
+                        .playlist-name {
+                            @include playlist-name;
+                        }
+
+                        .playlist-description {
+                            @include playlist-description;
+                        }
+                    }
+
+                }
+            }
+
+
+            /* -------- estructura de "se puede encontrar en" ----------------*/
+
+            &--found-in {
+                @include artist__container--with;
+
+                .found-in__header {
+                    @include with__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    &--show-all {
+                        a {
+                            @include show-all;
+                        }
+
+                        a:hover {
+                            @extend %showAllHover;
+                        }
+                    }
+
+                }
+
+                .found-in__playlist {
+                    @include with__playlist;
+
+                    &--card {
+                        @include with__playlist--card;
+
+                        &:hover {
+                            @extend %discographyAlbumsCardHover;
+                        }
+
+                        .playlist-name {
+                            @include playlist-name;
+                        }
+
+                        .playlist-description {
+                            @include playlist-description;
+                        }
+                    }
+
+                }
+            }
+
+            /* -------- estructura de "acerca de" ----------------*/
+
+            &--about {
+                @include artist__container--with;
+
+                .about__header {
+                    @include with__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+
+                .about__container {
+                    @include about__container;
+
+                    &--card {
+                        @include about__container--card;
+
+
+                        &:hover {
+                            @extend %scaleCardAboutHover;
+                        }
+
+                        .monthly-listeners {
+                            @include monthly-listeners;
+                        }
+
+                        .about-description {
+                            @include about-description;
+                        }
+                    }
+
+                }
+            }
+
+            /* -------- estructura de "Articulos de promocion" ----------------*/
+
+            &--promotions {
+                @include artist__container--promotions;
+
+                .promotions__header {
+                    @include with__header;
+
+                    &--title {
+                        h2:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+
+                .promotions__container {
+                    @include promotions__container;
+
+                    &--card {
+                        @include promotions__container--card;
+
+                        &:hover {
+                            @extend %promotionsContainerHover;
+
+                            .external-link {
+                                opacity: 1;
+                            }
+                        }
+
+                        .promotions-title {
+                            @include promotions-title;
+                        }
+
+                        .promotions-description {
+                            @include promotions-description;
+
+                            @include size1020px {
+                                font-size: 0.7rem;
+                            }
+                        }
+
+                        .external-link {
+                            @include external-link;
+                        }
+                    }
+
+                    @include size1020px {
+                        font-size: 0.7rem;
+                    }
+
+                }
+            }
+
+            /* ---------------- estrcutura de "Links" --------- */
+
+            &--links {
+                @include artist__container--links;
+
+                .links {
+
+                    @include links;
+
+                    &__extra {
+                        @include links__extra;
+
+                        &--title {
+                            @include links__extra--title;
+                        }
+
+                        &--link {
+                            @include links__extra--link;
+
+                            &:hover {
+                                @extend %linksExtraLinkhover;
+                            }
+
+                        }
+                    }
+                }
+
+                .social-media {
+                    @include social-media;
+                }
+
+                @include size1020px {
+                    font-size: 0.7rem;
+                }
+
+            }
+
+            /* ---------------- estructura de "Legal" --------- */
+
+            &--legal {
+                @include artist__container--legal;
+
+                .legal__links {
+                    @include legal__links;
+
+                    a {
+                        @include legal__links--a;
+
+                        &:hover {
+                            @extend %link-a-Hover;
+                        }
+                    }
+                }
+
+                .legal__spotify {
+                    p {
+                        @include legal__spotify--p;
+                    }
+                }
+            }
+        }
+    }
+
+    /* -------- estructura de la seccion aside derecho ----------------*/
+
+    .aside__info-artist {
+        @include aside__info-artist;
+
+
+        &::-webkit-scrollbar {
+            @extend %scrollBar;
+        }
+
+        &:hover {
+            &::-webkit-scrollbar-thumb {
+                @extend %scrollBarHover;
+
+            }
+        }
+
+        .container-header {
+            @include container-header;
+
+
+            &__title {
+
+                .title {
+                    @include h4-title;
+
+                    &:hover {
+                        @extend %underlineHover;
+                    }
+
+                }
+            }
+
+            &__icons {
+                @include icon-options;
+            }
+        }
+
+        /*----------------------------Seccion de "acerca de la cancion" --------------------------*/
+
+        .aside__info-artist--song {
+
+
+            .container-song {
+                @include container-song;
+            }
+
+            .container-footer {
+                @include container-footer;
+
+                .container-footer__info {
+
+                    .footer-song {
+                        @include h2-container-footer;
+
+                        &:hover {
+                            @extend %underlineHover;
+                        }
+
+                    }
+
+                    .footer-artist {
+                        @include h4-container-footer;
+
+                        &:hover {
+                            @extend %underlineHover;
+                        }
+                    }
+
+                }
+
+                &__icons {
+                    display: flex;
+                }
+
+            }
+        }
+
+        /*----------------------------Seccion de "acerca del artista" --------------------------*/
+
+        .aside__info-artist--about {
+
+
+            @include aside__info-artist--about;
+
+            .artist-about__title {
+                @extend %displayFlexAsideDerecho;
+
+                h4 {
+                    @include h4-artist-about__title;
+                }
+
+            }
+
+            .artist-about__icon {
+                @include artist-about__icon;
+            }
+
+            .artist-about__name {
+                @extend %displayFlexAsideDerecho;
+
+                h4 {
+                    @include h4-artist-about__name;
+
+                    &:hover {
+                        @extend %h4ArtistAboutNameHover;
+
+                    }
+                }
+            }
+
+            .artist-about__listeners {
+                @include artist-about__listeners;
+
+                p {
+                    @include p-artist-about__listeners;
+
+                }
+            }
+
+            .artist-about__info {
+                @extend %displayFlexAsideDerecho;
+
+                p {
+                    @include p-artist-about__info;
+
+                }
+            }
+        }
+
+        /*--------------------------- Seccion de "creditos" ----------------------------- */
+
+        .aside__info-artist--credits {
+            @include aside__info-artist--credits;
+
+            .credits__container {
+                @include credits__container;
+
+                &--title {
+                    @include h4-artist-about__title;
+                }
+
+                &--show-all {
+                    @include show-all;
+
+                    &:hover {
+                        @extend %showAllHover;
+                    }
+                }
+            }
+
+            .info__container {
+                @include info__container;
+
+                &--artist {
+                    @include info__container--artist;
+
+                    &:hover {
+                        @extend %h4ArtistAboutNameHover;
+
+                    }
+                }
+
+                &--description {
+                    @include info__container--description;
+                }
+            }
+
+            .more-credits__container {
+                @include more-credits__container;
+
+                &--artist {
+                    @extend %margin0px;
+                }
+
+                &--description {
+                    @include more-credits__container--description;
+                }
+            }
+        }
+
+        /*-------------------------- Seccion de "siguiente en la fila" --------------------- */
+
+        .aside__info-artist--next-song {
+            @include aside__info-artist--next-song;
+
+            .next-song__container {
+                @extend %displayFlexAsideDerecho;
+
+                h4 {
+                    @extend %margin5px;
+
+                    &:hover {
+                        @extend %showAllHover
+                    }
+                }
+            }
+
+            .card-song__container {
+                @include card-song__container;
+
+                &:hover {
+                    @extend %cardCongContainerHover;
+                }
+
+                .card-song__container--info {
+                    .name-song {
+                        @include name-song;
+                    }
+
+                    .name-artist {
+                        @include name-artist;
+                    }
+                }
+            }
+        }
+
+    }
+
+    /*-------------------------- Seccion reproductor--------------------- */
+
+
+    .footer-player {
+        @include footer-player;
+
+        &__container-icons {
+            @include footer-player__container-icons;
+
+            &--left {
+                @include footer-player__container-icons--left;
+
+                .song-info__h5 {
+                    @include song-info__h5;
+
+                    &:hover {
+                        @extend %underlineHover;
+                    }
+
+                }
+
+                .song-info__h6 {
+                    @include song-info__h6;
+
+                    &:hover {
+                        @extend %underlineHover;
+                        color: #fff;
+                    }
+                }
+
+            }
+
+            &--center {
+                @include footer-player__container-icons--center;
+
+                .icons-control-player {
+                    @include icons-control-player;
+                }
+
+                .song-duration {
+                    @include song-duration;
+
+                    p {
+                        @include song-duration-p;
+                    }
+
+                }
+            }
+
+            &--right {
+                @include footer-player__container-icons--right;
+
+                .icons-volume {
+                    @extend %displayFlexAsideDerecho;
+                }
+
+                .volume {
+                    @include volume;
+                }
+            }
+        }
+
+    }
+
+}

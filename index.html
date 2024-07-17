@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Mano Negra | Spotify</title>
+</head>
+
+<body>
+    <!------------------------contenido del aside izquierdo--------------->
+    <aside class="aside">
+        <article class="aside__user">
+            <div>
+                <i><img src="img/icons/home-grey.svg" alt="icon_home"></i>
+
+                <p>
+                    Inicio
+                </p>
+            </div>
+
+            <div>
+                <i><img src="img/icons/search.svg" alt="icon_search"></i>
+
+                <p>
+                    Buscar
+                </p>
+            </div>
+
+
+        </article>
+
+        <article class="container-user">
+            <section class="container-user__icon">
+                <div class="container-user__icon--disc">
+                    <i><img src="img/icons/disc.svg" alt="icon_libary"></i>
+                    <p>Tu biblioteca</p>
+                </div>
+
+                <div class="container-user__icon--plus">
+                    <i><img src="img/icons/plus.svg" alt="icon_plus"></i>
+                    <i><img src="img/icons/arrow-right.svg" alt="icon_arrow-right"></i>
+                </div>
+            </section>
+
+            <section class="container-user__buttons">
+                <input type="button" value="playlist">
+                <input type="button" value="álbumes">
+            </section>
+
+            <section class="container-user__artist">
+
+                <div class="container-user__icon--secondary">
+                    <i><img src="img/icons/search.svg"></i>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                recientes
+                                <i><img src="img/icons/list.svg"></i>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/david-bowie.jpg" alt="david-bowie"></i>
+                    <div class="artist-card__info">
+                        <a href="#">david bowie</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/oasis.jpg" alt="oasis"></i>
+                    <div class="artist-card__info">
+                        <a href="#">oasis</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/pixies.jpg" alt="pixies"></i>
+                    <div class="artist-card__info">
+                        <a href="#">pixies</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/ramones.jpg" alt="ramones"></i>
+                    <div class="artist-card__info">
+                        <a href="#">ramones</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/Slade.png" alt="slade"></i>
+                    <div class="artist-card__info">
+                        <a href="#">slade</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/sp.jpg" alt="sp"></i>
+                    <div class="artist-card__info">
+                        <a href="#">the smashing pumpkins</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/the-clash.jpg" alt="the-clash"></i>
+                    <div class="artist-card__info">
+                        <a href="#">the clash</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/the-stone-roses.jpg" alt="the-stone-roses"></i>
+                    <div class="artist-card__info">
+                        <a href="#">the stone roses</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/u2.jpg" alt="u2"></i>
+                    <div class="artist-card__info">
+                        <a href="#">u2</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <i><img src="img/artist-cover/vu.jpg" alt="vu"></i>
+                    <div class="artist-card__info">
+                        <a href="#">the velvet underground</a>
+                        <p>artista</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </aside>
+
+    <!------------------------contenido del main central------------------>
+
+    <main class="artist">
+        <article class="artist__container">
+            <section class="artist__container--banner">
+                <nav class="nav__buttons">
+                    <div class="nav__buttons-left-right">
+                        <i><img src="img/icons/arrow-left-circle.svg" alt="icon-arrow-left-circle"></i>
+                        <i><img src="img/icons/arrow-right-circle.svg" alt="icon-arrow-right-circle"></i>
+                    </div>
+                    <div class="nav__buttons-premium">
+                        <input type="button" value="Explorar premium">
+                        <div class="nav__button-premium--app">
+                            <button type="button" value="Instalar aplicación"><i><img
+                                        src="img/icons/arrow-down-circle.svg"></i>Instalar aplicación</button>
+                        </div>
+                        <i><img class="bell-icon" src="img/icons/bell.svg"></i>
+                        <i><img class="user-icon" src="img/icons/user-icon.jpeg"></i>
+                    </div>
+                </nav>
+
+                <article class="artist-info">
+                    <section>
+                        <h1 class="artist-name">Mano Negra</h1>
+                        <h4>735,785 oyentes mensuales</h4>
+                    </section>
+                </article>
+            </section>
+
+            <section class="artist__container--play">
+                <div class="controls-play">
+                    <i class="icon-play"><img src="img/icons/right-arrow_137495.png"></i>
+                    <input type="button" value="Siguiendo">
+                    <i class="icon-more"><img src="img/icons/more-horizontal.svg"></i>
+                </div>
+                <div class="grid-popular">
+                    <div class="grid-popular__title">
+                        <h2>Popular</h2>
+                    </div>
+                    <div class="grid-popular__songs">
+
+                        <div class="grid-popular__songs--card">
+                            <div class="num-song">
+                                <span>1</span>
+                            </div>
+                            <div class="song">
+                                <i class="song__icon-cover"><img class="cover-song"
+                                        src="img/artist-albums-cover/patchanka.jpg"></i>
+                                <a href="#">Mala Vida</a>
+                            </div>
+                            <div class="reproductions icons-options">
+                                <div>46,167,585</div>
+                            </div>
+                            <div class="duration">
+                                <div class="icons-options">
+                                    <i class="add-circle__icon"><img src="img/icons/plus-circle.svg"></i>
+                                </div>
+                                <div>2:54</div>
+                                <div class="icons-options">
+                                    <i class="options__icon"><img src="img/icons/more-horizontal.svg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-popular__songs--card">
+                            <div class="num-song">
+                                <span>2</span>
+                            </div>
+                            <div class="song">
+                                <i class="song__icon-cover"><img class="cover-song"
+                                        src="img/artist-albums-cover/king-of-bongo.jpg"></i>
+                                <a href="#">Out of Time Man</a>
+                            </div>
+                            <div class="reproductions">
+                                <div>43,496,111</div>
+                            </div>
+                            <div class="duration">
+                                <div class="icons-options">
+                                    <i class="add-circle__icon"><img src="img/icons/plus-circle.svg"></i>
+                                </div>
+                                <div>3:24</div>
+                                <div class="icons-options">
+                                    <i class="options__icon"><img src="img/icons/more-horizontal.svg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-popular__songs--card">
+                            <div class="num-song">
+                                <span>3</span>
+                            </div>
+                            <div class="song">
+                                <i class="song__icon-cover"><img class="cover-song"
+                                        src="img/artist-albums-cover/putas-fever.jpg"></i>
+                                <a href="#">pas assez de toi</a>
+                            </div>
+                            <div class="reproductions">
+                                <div>12,869,666</div>
+                            </div>
+                            <div class="duration">
+                                <div class="icons-options">
+                                    <i class="add-circle__icon"><img src="img/icons/plus-circle.svg"></i>
+                                </div>
+                                <div>2:20</div>
+                                <div class="icons-options">
+                                    <i class="options__icon"><img src="img/icons/more-horizontal.svg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-popular__songs--card">
+                            <div class="num-song">
+                                <span>4</span>
+                            </div>
+                            <div class="song">
+                                <i class="song__icon-cover"><img class="cover-song"
+                                        src="img/artist-albums-cover/casa-babylon.jpg"></i>
+                                <a href="#">señor matanza</a>
+                            </div>
+                            <div class="reproductions">
+                                <div>15,921,109</div>
+                            </div>
+                            <div class="duration">
+                                <div class="icons-options">
+                                    <i class="add-circle__icon"><img src="img/icons/plus-circle.svg"></i>
+                                </div>
+                                <div>3:57</div>
+                                <div class="icons-options">
+                                    <i class="options__icon"><img src="img/icons/more-horizontal.svg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-popular__songs--card">
+                            <div class="num-song">
+                                <span>5</span>
+                            </div>
+                            <div class="song">
+                                <i class="song__icon-cover"><img class="cover-song"
+                                        src="img/artist-albums-cover/putas-fever.jpg"></i>
+                                <a href="#">king kong five</a>
+                            </div>
+                            <div class="reproductions">
+                                <div>9,615,230</div>
+                            </div>
+                            <div class="duration">
+                                <div class="icons-options">
+                                    <i class="add-circle__icon"><img src="img/icons/plus-circle.svg"></i>
+                                </div>
+                                <div>1:57</div>
+                                <div class="icons-options">
+                                    <i class="options__icon"><img src="img/icons/more-horizontal.svg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-popular__more">
+                        <div class="more">
+                            <a href="#">Ver más</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- -----------------------------------Seccion de Discografia-------------------------->
+
+            <section class="artist__container--discography">
+                <div class="discography__header">
+                    <div class="discography__header--title">
+                        <h2>discografía</h2>
+                    </div>
+                    <div class="discography__header--show-all">
+                        <a href="#">Mostrar todo</a>
+                    </div>
+                </div>
+
+                <div class="discography__nav">
+                    <div class="discography__nav--buttons">
+                        <input type="button" value="lanzamientos populares">
+                        <input type="button" value="álbumes">
+                        <input type="button" value="recopilaciones">
+                    </div>
+                </div>
+
+                <div class="discography__albums">
+                    <div class="discography__albums--card">
+                        <i class="icon-cover-album"><img class="cover-album"
+                                src="img/artist-albums-cover/patchanka.jpg"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+
+                        <h4 class="album-name">Patchanka</h4>
+                        <time class="date" datetime="1998">1988 • Álbum</time>
+                    </div>
+
+                    <div class="discography__albums--card">
+                        <i class="icon-cover-album"><img class="cover-album"
+                                src="img/artist-albums-cover/putas-fever.jpg"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="album-name">Puta's Fever</h4>
+                        <time class="date" datetime="1989">1989 • Álbum</time>
+                    </div>
+
+                    <div class="discography__albums--card">
+                        <i class="icon-cover-album"><img class="cover-album"
+                                src="img/artist-albums-cover/king-of-bongo.jpg"><i class="icon-play"><img
+                                    class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="album-name">King Of Bongo</h4>
+                        <time class="date" datetime="1991">1991 • Álbum</time>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "con mano negra"------------------------>
+
+            <section class="artist__container--with">
+
+                <div class="with__header">
+                    <div class="with__header--title">
+                        <h2>con mano negra</h2>
+                    </div>
+                    <div class="with__header--show-all">
+                        <a href="#">Mostrar todo</a>
+                    </div>
+                </div>
+
+                <div class="with__playlist">
+
+                    <div class="with__playlist--card">
+                        <i class="icon-cover-playlist"><img class="cover-playlist"
+                                src="img/playlist-cover/this_is.png"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">This Is Mano Negra</h4>
+                        <p class="playlist-description">This Is Mano Negra. Los<br>temasesenciales, todos en..</p>
+                    </div>
+
+                    <div class="with__playlist--card">
+                        <i class="icon-cover-playlist"><img class="cover-playlist" src="img/playlist-cover/radio.png"><i
+                                class="icon-play"><img class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">Radio de Mano Negra</h4>
+                        <p class="playlist-description">Con Manu Chao y más</p>
+                    </div>
+
+                    <div class="with__playlist--card">
+                        <i class="icon-cover-playlist"><img class="cover-playlist"
+                                src="img/playlist-cover/playlist1.png"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">Himnos de Futbol</h4>
+                        <p class="playlist-description">Rueda el balón<br>y late el corazón ⚽️❤️</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "a los fans tambien les gusta"------------------------>
+
+            <section class="artist__container--fans">
+
+                <div class="fans__header">
+                    <div class="fans__header--title">
+                        <h2>a los fans también les gusta</h2>
+                    </div>
+                    <div class="fans__header--show-all">
+                        <a href="#">Mostrar todo</a>
+                    </div>
+                </div>
+
+                <div class="fans__playlist">
+
+                    <div class="fans__playlist--card">
+                        <i class="icon-cover-artist-with"><img class="cover-artist-with"
+                                src="img/artist-like-fans/todos-tus-muertos.png"><i class="icon-play"><img
+                                    class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">Todos tus muertos</h4>
+                        <p class="playlist-description">Artista</p>
+                    </div>
+
+                    <div class="fans__playlist--card">
+                        <i class="icon-cover-artist-with"><img class="cover-artist-with"
+                                src="img/artist-like-fans/garcia.png"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">sargent garcia</h4>
+                        <p class="playlist-description">Artista</p>
+                    </div>
+
+                    <div class="fans__playlist--card">
+                        <i class="icon-cover-artist-with"><img class="cover-artist-with"
+                                src="img/artist-like-fans/manu-chao.png"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">manu chao</h4>
+                        <p class="playlist-description">Artista</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "aparece en"------------------------>
+
+            <section class="artist__container--appears">
+
+                <div class="appears__header">
+                    <div class="appears__header--title">
+                        <h2>aparece en</h2>
+                    </div>
+                </div>
+
+                <div class="appears__playlist">
+
+                    <div class="appears__playlist--card">
+                        <i class="icon-cover-album-appears"><img class="cover-album-appears"
+                                src="img/appears/santa-maradona.png"><i class="icon-play"><img class="img-play"
+                                    src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">santa maradona</h4>
+                        <time class="date" datetime="2023">2023 • EP</time>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!----------------------------Seccion de "playlist del artista"------------------------>
+
+            <section class="artist__container--playlist-artist">
+
+                <div class="playlist-artist__header">
+                    <div class="playlist-artist__header--title">
+                        <h2>playlist del artista</h2>
+                    </div>
+                </div>
+
+                <div class="playlist-artist__playlist">
+
+                    <div class="playlist-artist__playlist--card">
+                        <i class="icon-cover-playlist-artist"><img class="cover-playlist-artist"
+                                src="img/playlist-artist/mano-negra-essentials.png"><i class="icon-play"><img
+                                    class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">mano negra essentials</h4>
+                        <p class="playlist-description">All your favorite Mano Negra<br>songs in one playlist!</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "se puede encontrar en"------------------------>
+
+            <section class="artist__container--found-in">
+
+                <div class="found-in__header">
+                    <div class="found-in__header--title">
+                        <h2>se puede encontrar en</h2>
+                    </div>
+                    <div class="found-in__header--show-all">
+                        <a href="#">Mostrar todo</a>
+                    </div>
+                </div>
+
+                <div class="found-in__playlist">
+
+                    <div class="found-in__playlist--card">
+                        <i class="icon-cover-playlist"><img class="cover-playlist" src="img/found-in/playlist1.png"><i
+                                class="icon-play"><img class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">sour la route</h4>
+                        <p class="playlist-description">La playlist idéale pour<br>prendre la route.</p>
+                    </div>
+
+                    <div class="found-in__playlist--card">
+                        <i class="icon-cover-playlist"><img class="cover-playlist" src="img/found-in/playlist2.png"><i
+                                class="icon-play"><img class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">Anthologie du Rock</h4>
+                        <p class="playlist-description">Les plus grands standards<br>du rock français.</p>
+                    </div>
+
+                    <div class="found-in__playlist--card">
+                        <i class="icon-cover-playlist"><img class="cover-playlist" src="img/found-in/playlist3.png"><i
+                                class="icon-play"><img class="img-play" src="img/icons/right-arrow_137495.png"></i></i>
+                        <h4 class="playlist-name">Rock Español</h4>
+                        <p class="playlist-description">Lo mejor del rock de aquí,<br>como Estopa.</p>
+                    </div>
+
+
+
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "Acerca de"------------------------>
+
+            <section class="artist__container--about">
+                <div class="about__header">
+                    <div class="about__header--title">
+                        <h2>acerca de</h2>
+                    </div>
+                </div>
+                <div class="about__container">
+                    <div class="about__container--card">
+                        <i class="icon-cover-logo"><img class="cover-logo"
+                                src="img/artist-albums-cover/mano-negra-logo-2.jpg"></i>
+                        <h4 class="monthly-listeners">735,785 oyentes mensuales</h4>
+                        <p class="about-description">Named in honor of an Andalucian anarchist group, Mano Negra emerged
+                            from the same
+                            Parisian artists' scene which also gave rise to the like-minded Les Negresses Vertes,
+                            drawing equal influence from the punk ethos of The Clash</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "Articulos de promocion"------------------------>
+
+            <section class="artist__container--promotions">
+                <div class="promotions__header">
+                    <div class="promotions__header--title">
+                        <h2>articulos de promocion</h2>
+                    </div>
+                </div>
+                <div class="promotions__container">
+                    <div class="promotions__container--card">
+                        <i class="icon-cover-logo"><img class="cover-logo"
+                                src="img/artist-albums-cover/putas-fever.jpg"></i>
+                        <a href="https://www.merchbar.com/rock-alternative/mano-negra/mano-negra-puta-s-fever-lp-cd-vinyl-record?utm_source=merchbar-spotify&utm_medium=affiliate"
+                            class="promotions-title">PUTA´S FEVER (LP/CD) Vinyl Record</a>
+                        <p class="promotions-description">Protection Each record is protected within its record sleeve
+                            by a
+                            white vellum.</p>
+
+                        <div class="external-link">
+                            <a
+                                href="https://www.merchbar.com/rock-alternative/mano-negra/mano-negra-puta-s-fever-lp-cd-vinyl-record?utm_source=merchbar-spotify&utm_medium=affiliate">
+                                <i class="icon-cover-logo"><img class="cover-logo"
+                                        src="img/icons/external-link.svg"></i></a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="promotions__container">
+                    <div class="promotions__container--card">
+                        <i class="icon-cover-logo"><img class="cover-logo"
+                                src="img/playlist-artist/mano-negra-essentials.png"></i>
+                        <a href="https://www.merchbar.com/rock-alternative/mano-negra/best-of-mano-negra-vinyl-record?utm_source=merchbar-spotify&utm_medium=affiliate"
+                            class="promotions-title">BEST OF MANO NEGRA Vinyl Record</a>
+                        <p class="promotions-description">Protection Each record is protected within its record sleeve
+                            by a
+                            white vellum.</p>
+
+                        <div class="external-link">
+                            <a
+                                href="https://www.merchbar.com/rock-alternative/mano-negra/best-of-mano-negra-vinyl-record?utm_source=merchbar-spotify&utm_medium=affiliate">
+                                <i class="icon-cover-logo"><img class="cover-logo"
+                                        src="img/icons/external-link.svg"></i></a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="promotions__container">
+                    <div class="promotions__container--card">
+                        <i class="icon-cover-logo"><img class="cover-logo"
+                                src="img/artist-albums-cover/casa-babylon.jpg"></i>
+                        <a href="https://www.merchbar.com/rock-alternative/mano-negra/mano-negra-casa-babylon-vinyl-record"
+                            class="promotions-title">CASA BABYLON Vinyl Record</a>
+                        <p class="promotions-description">Protection Each record is protected within its record sleeve
+                            by a
+                            white vellum.</p>
+
+                        <div class="external-link">
+                            <a
+                                href="https://www.merchbar.com/rock-alternative/mano-negra/mano-negra-casa-babylon-vinyl-record">
+                                <i class="icon-cover-logo"><img class="cover-logo"
+                                        src="img/icons/external-link.svg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!----------------------------Seccion de "links"-------------------------->
+
+            <section class="artist__container--links">
+                <div class="links">
+                    <ul class="links__extra">
+                        <h4 class="links__extra--title">Compañia</h4>
+                        <li class="links__extra--link">Acerca de</li>
+                        <li class="links__extra--link">Empleo</li>
+                        <li class="links__extra--link">For the Record</li>
+                    </ul>
+                </div>
+
+                <div class="links">
+                    <ul class="links__extra">
+                        <h4 class="links__extra--title">Comunidades</h4>
+                        <li class="links__extra--link">Para artistas</li>
+                        <li class="links__extra--link">Desarrolladores</li>
+                        <li class="links__extra--link">Publicidad</li>
+                        <li class="links__extra--link">Inversionistas</li>
+                        <li class="links__extra--link">Proveedores</li>
+                    </ul>
+                </div>
+
+                <div class="links">
+                    <ul class="links__extra">
+                        <h4 class="links__extra--title">Enlaces Utiles</h4>
+                        <li class="links__extra--link">Ayuda</li>
+                        <li class="links__extra--link">App móvil gratis</li>
+                    </ul>
+                </div>
+
+                <div class="links">
+                    <ul class="links__extra">
+                        <h4 class="links__extra--title">Planes de Spotify</h4>
+                        <li class="links__extra--link">Premium Individual</li>
+                        <li class="links__extra--link">Prmium Duo</li>
+                        <li class="links__extra--link">Premium Familiar</li>
+                        <li class="links__extra--link">Premium para Estudiantes</li>
+                        <li class="links__extra--link">Versión gratuita</li>
+                    </ul>
+                </div>
+
+                <div class="social-media">
+                    <i class="social-media__icon"><img src="img/icons/instagram.svg"></i>
+                    <i class="social-media__icon"><img src="img/icons/twitter.svg"></i>
+                    <i class="social-media__icon"><img src="img/icons/facebook.svg"></i>
+                </div>
+
+            </section>
+
+            <!----------------------------Seccion de "legal"-------------------------->
+
+            <section class="artist__container--legal">
+                <div class="legal__links">
+                    <a href="#">Legal</a>
+                    <a href="#">Seguridad y Centro de Privacidad</a>
+                    <a href="#">Politica de Privacidad</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Sobre los anuncios</a>
+                    <a href="#">Accesibilidad</a>
+                </div>
+
+                <div class="legal__spotify">
+                    <p>&copy; 2024 Spotify AB</p>
+                </div>
+
+            </section>
+
+        </article>
+
+
+
+
+    </main>
+
+    <!--------------------------------contenido del aside derecho--------------------->
+
+    <aside class="aside__info-artist">
+
+        <section class="container-header">
+            <div class="container-header__title">
+                <h4 class="title">Mano Negra</h4>
+            </div>
+
+            <div class="container-header__icons">
+                <i class="icon-options"><img class="more-icon" src="img/icons/more-horizontal.svg"></i>
+                <i class="icon-options"><img class="x-icon" src="img/icons/x.svg"></i>
+            </div>
+        </section>
+
+        <!----------------------------Seccion de "acerca de la cancion"-------------------------->
+
+        <section class="aside__info-artist--song">
+
+            <div class="container-song">
+                <i class="icon-cover"><img class="album-cover" src="img/artist-albums-cover/patchanka.jpg"></i>
+            </div>
+
+            <div class="container-footer">
+                <div class="container-footer__info">
+                    <h2 class="footer-song">Mala Vida</h2>
+                    <h4 class="footer-artist">Mano Negra</h4>
+                </div>
+                <div class="container-footer__icons">
+                    <i class="icon-options"><img src="img/icons/plus-circle.svg"></i>
+                </div>
+            </div>
+
+        </section>
+
+        <!----------------------------Seccion de "acerca del artista"-------------------------->
+
+        <section class="aside__info-artist--about">
+
+            <div class="artist-about__title">
+                <h4 class="artist-about__title--about">Acerca del artista</h4>
+            </div>
+            <div class="artist-about__icon">
+                <i class="artist-about__icon--cover"><img class="cover-artist-about"
+                        src="img/artist-albums-cover/mano-negra-logo-2.jpg"></i>
+            </div>
+            <div class="artist-about__name">
+                <h4 class="artist-about__name--artist">Mano Negra</h4>
+            </div>
+            <div class="artist-about__listeners">
+                <p>738,178 oyentes mensuales</p>
+                <input type="button" value="Dejar de seguir">
+            </div>
+            <div class="artist-about__info">
+                <p>Named in honor of an Andalucian anarchist group, Mano Negra emerged from the same Parisian..</p>
+            </div>
+
+        </section>
+
+        <!----------------------------Seccion de "creditos"-------------------------->
+
+        <section class="aside__info-artist--credits">
+
+            <div class="credits__container">
+                <h4 class="credits__container--title">Créditos</h4>
+                <a class="credits__container--show-all" href="#">Mostrar todo</a>
+            </div>
+
+            <div class="info__container">
+                <a class="info__container--artist" href="#">Mano<br>Negra</a>
+                <p class="info__container--description">Artista<br>principal</p>
+                <input type="button" value="Dejar de seguir">
+            </div>
+
+            <div class="more-credits__container">
+                <h4 class="more-credits__container--artist">Manu Chao</h4>
+                <p class="more-credits__container--description">Composición, Letrista</p>
+            </div>
+        </section>
+
+        <!----------------------------Seccion de "siguiente en la fila"-------------------------->
+
+        <section class="aside__info-artist--next-song">
+
+            <div class="next-song__container">
+                <h4 class="next-song__container--title">Siguiente en la fila</h4>
+            </div>
+
+            <div class="card-song__container">
+                <i class="card-song__container--play"><img class="card-song__container--img"
+                        src="img/icons/play.svg"></i>
+                <i class="card-song__container--icon"><img class="card-song__container--img"
+                        src="img/artist-albums-cover/casa-babylon.jpg"></i>
+                <div class="card-song__container--info">
+                    <p class="name-song">Santa Maradona</p>
+                    <p class="name-artist">Mano Negra</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </aside>
+
+    <!--------------------------------contenido del footer reproductor--------------------->
+
+
+    <footer class="footer-player">
+        <section class="footer-player__container-icons">
+
+            <div class="footer-player__container-icons--left">
+
+                <i class="icon-album-player"><img class="icon-album-player__img"
+                        src="img/artist-albums-cover/patchanka.jpg"></i>
+                <div class="song-info">
+                    <h5 class="song-info__h5">Mala Vida</h5>
+                    <h6 class="song-info__h6">Mano Negra</h6>
+                </div>
+                <i class="icon-options-player"><img class="icon-options-player__img"
+                        src="img/icons/icon__reproductor/plus-circle.svg"></i>
+
+            </div>
+
+            <div class="footer-player__container-icons--center">
+
+                <div class="icons-control-player">
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/shuffle.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/skip-back.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/play-circle (2).svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/skip-forward.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/repeat.svg"></i>
+
+                </div>
+
+                <div class="song-duration">
+                    <p>0:00</p>
+
+                    <div class="progress-bar-container">
+                        <i class="white-point"></i>
+                        <div class="progress-bar-html"></div>
+                    </div>
+
+                    <p>2:55</p>
+                </div>
+
+            </div>
+
+            <div class="footer-player__container-icons--right">
+                <div class="icons-volume">
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/speaker.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/mic.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/list.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/speaker.svg"></i>
+                </div>
+
+                <div class="volume">
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/volume-2.svg"></i>
+
+                    <div class="progress-bar-container">
+                        <i class="white-point"></i>
+                        <div class="progress-bar-html"></div>
+                    </div>
+
+
+                </div>
+
+                <div class="icons-volume">
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/airplay.svg"></i>
+
+                    <i class="icon-options-player"><img class="icon-options-player__img"
+                            src="img/icons/icon__reproductor/maximize-2.svg"></i>
+                </div>
+
+            </div>
+        </section>
+    </footer>
+
+</body>
+
+</html>

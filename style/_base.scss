@@ -1,0 +1,1209 @@
+$bodyColor: #000000;
+$bodyFont: 'Albert Sans', Arial, Helvetica, sans-serif;
+$containerColor: #121212;
+$color: #ffff;
+$widthTotal: 100%; 
+
+
+@mixin main-grid {
+    background-color: $bodyColor;
+    font-family: $bodyFont;
+    color: $color;
+    width: 100%;
+
+    
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 19rem 42rem auto;
+    grid-template-rows: pxTorem(510, rem) auto;
+    grid-template-areas: 'aside__user artist__main aside__info-artist'
+        'footer__player footer__player footer__player';
+}
+
+@mixin aside-style {
+    background-color: $bodyColor;
+    grid-area: aside__user;
+    width: $widthTotal;
+    padding: pxTorem(5, rem) pxTorem(0, rem);
+}
+
+@mixin iconSize ($width, $height, $marginr: pxTorem(0, rem)) {
+    width: $width;
+    height: $height;
+    margin-right: $marginr;
+    cursor: pointer;
+}
+
+@mixin img-total-width {
+    width: 100%;
+}
+
+@mixin article-style () {
+    padding: pxTorem(8, rem) pxTorem(12, rem);
+    background-color: $containerColor;
+    display: flex;
+    border: 5px solid $bodyColor;
+    box-sizing: border-box;
+    border-radius: pxTorem(10, rem);
+    flex-direction: column;
+    gap: pxTorem(10, rem);
+}
+
+@mixin article-style-container-user () {
+    padding: pxTorem(8, rem) pxTorem(12, rem);
+    background-color: $containerColor;
+    display: flex;
+    border: 5px solid $bodyColor;
+    box-sizing: border-box;
+    border-radius: pxTorem(10, rem);
+    flex-direction: column;
+    gap: pxTorem(10, rem);
+    height: 22rem;
+}
+
+@mixin list-style {
+    list-style-type: none;
+    padding: 0;
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    gap: pxTorem(10, rem);
+    margin: pxTorem(5, rem);
+    align-items: center;
+}
+
+@mixin div-style ($display, $align, $justify, $direction: row, $width: 97%, $gap: pxTorem(10, rem), $margin: pxTorem(5, rem)) {
+    list-style-type: none;
+    padding: 0px;
+    width: $width;
+    display: $display;
+    gap: $gap;
+    margin: pxTorem(5, rem);
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin div-style--plus {
+    list-style-type: none;
+    padding: 0px;
+    width: 37%;
+    display: flex;
+    gap: pxTorem(10, rem);
+    margin: pxTorem(5, rem);
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+@mixin buttons-library {
+    background-color: #ffffff12;
+    cursor: pointer;
+    border-radius: pxTorem(17, rem);
+    font-family: $bodyFont;
+    border: none;
+    width: pxTorem(80, rem);
+    height: pxTorem(30, rem);
+    @extend %fontStyle;
+    color: $color;
+}
+
+@mixin aStyles ($fontSize: 1rem, $justify: flex-start) {
+    display: flex;
+    align-items: center;
+    gap: pxTorem(10, rem);
+    justify-content: $justify;
+    font-size: $fontSize;
+    text-transform: capitalize;
+}
+
+@mixin div-style--disc {
+    display: flex;
+    align-items: center;
+    gap: pxTorem(10, rem);
+    text-transform: none;
+    cursor: pointer;
+}
+
+
+@mixin pStyle ($fontWeight, $fontSize: 1rem, $margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: #a7a7a7;
+}
+
+@mixin img-circle {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+}
+
+@mixin div-style--artist ($display, $align, $justify, $direction: row, $width: 97%, $gap: pxTorem(10, rem)) {
+    list-style-type: none;
+    padding: 0px;
+    width: $width;
+    height: pxTorem(273, rem);
+    display: $display;
+    gap: $gap;
+    margin: pxTorem(0, rem);
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+@mixin main-style {
+    background-color: $bodyColor;
+    grid-area: artist__main;
+    width: $widthTotal;
+    padding: pxTorem(5, rem) pxTorem(0, rem);
+}
+
+@mixin nav__user-styles {
+    display: flex;
+    justify-content: space-between;
+    padding: pxTorem(16, rem);
+    position: fixed;
+    width: 49.4%;
+
+}
+
+@mixin div__nav-styles ($gap: 5px) {
+    display: flex;
+    gap: $gap;
+    align-items: center;
+    cursor: pointer;
+}
+
+@mixin buttons-nav {
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 17px;
+    font-family: $bodyFont;
+    border: none;
+    width: pxTorem(160, rem);
+    height: pxTorem(30, rem);
+    @extend %fontStyle;
+    color: #000000;
+    text-transform: none;
+    font-weight: 700;
+}
+
+@mixin buttons-app ($width: 10rem, $height: 1.875rem, $marginr: pxTorem(0, rem), $border: none, $bgc: rgba(33, 32, 32, 0.7)) {
+    display: flex;
+    background-color: $bgc;
+    cursor: pointer;
+    border-radius: 17px;
+    font-family: "Albert Sans", Arial, Helvetica, sans-serif;
+    border: $border;
+    width: $width;
+    height: $height;
+    color: white;
+    align-items: center;
+    text-transform: none;
+    font-weight: 700;
+    gap: pxTorem(10, rem);
+    margin-right: $marginr;
+}
+
+
+@mixin user-profile {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+@mixin icons-circle ($padding: 5px) {
+    width: 100%;
+    background-color: #ffff;
+    border-radius: 50%;
+    padding: $padding;
+    box-sizing: border-box;
+}
+
+@mixin artist-info {
+    display: flex;
+    padding: 0px;
+    margin-left: 15px;
+    margin-top: 50px;
+
+}
+
+@mixin artist-style {
+    background-color: $containerColor;
+    display: flex;
+    border: 5px solid $bodyColor;
+    box-sizing: border-box;
+    border-radius: pxTorem(10, rem);
+    flex-direction: column;
+    gap: pxTorem(10, rem);
+}
+
+@mixin artist-container {
+    background-color: $containerColor;
+    display: flex;
+    border: 5px solid $bodyColor;
+    box-sizing: border-box;
+    border-radius: pxTorem(10, rem);
+    flex-direction: column;
+    gap: pxTorem(0, rem);
+    height: 32rem;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+@mixin artist__container--banner {
+    background-image: url("../img/artist-cover/mano-negra-banner2.jpg");
+    border-radius: pxTorem(10, rem);
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+
+}
+
+@mixin artist__container--play {
+    background: linear-gradient(0deg, #121212 40%, #D3D03F 100%);
+}
+
+@mixin controls-play {
+    display: flex;
+    align-items: center;
+    padding: pxTorem(16, rem);
+}
+
+@mixin popular-style {
+    margin: 0px;
+    margin-top: 12px;
+    margin-left: 18px;
+    margin-bottom: 15px;
+}
+
+@mixin grid-popular {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+@mixin grid-title {
+    display: grid;
+    grid-column: 1 / 4;
+}
+
+@mixin grid-songs {
+    display: grid;
+    grid-column: 1/4;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+@mixin grid-songs-card {
+    display: grid;
+    grid-template-columns: 16px 270px 135px 120px;
+    grid-template-rows: 56px;
+    gap: 16px;
+    padding: 0px 18px;
+    box-sizing: border-box;
+}
+
+@mixin grid-popular__more {
+    margin: 0px;
+    margin-top: 12px;
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+@mixin flex-num-song {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b3b3b3;
+}
+
+@mixin song-name {
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #ffff;
+}
+
+@mixin rep-dur-style ($margin-left: pxTorem(0, rem), $gap: pxTorem(0, rem)) {
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-left: $margin-left;
+    color: #b3b3b3;
+    gap: $gap;
+}
+
+@mixin icons-options {
+    display: flex;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+@mixin artist__container--discography {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: pxTorem(47, rem) auto;
+    grid-template-areas:
+        "discography__header    discography__header     discography__header"
+        "discography__nav       discography__nav        discography__nav"
+        "discography__albums    discography__albums     discography__albums";
+
+    margin-top: 40px;
+}
+
+@mixin discography__header {
+    grid-area: discography__header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 18px;
+    height: 42px;
+}
+
+@mixin discography__nav {
+    grid-area: discography__nav;
+    margin: 10px 20px;
+}
+
+@mixin discography__nav--buttons ($width: pxTorem(80, rem), $height: pxTorem(32, rem)) {
+    background-color: #ffffff12;
+    cursor: pointer;
+    border-radius: 17px;
+    font-family: $bodyFont;
+    border: none;
+    width: $width;
+    height: $height;
+    @extend %fontStyle;
+    color: $color;
+}
+
+
+@mixin discography__albums {
+    grid-area: discography__albums;
+    margin: 15px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin show-all {
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #b3b3b3;
+    font-weight: 700;
+}
+
+@mixin discography__albums--card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@mixin album-name {
+    margin: 7px 0px;
+}
+
+@mixin date {
+    font-size: 0.875rem;
+    color: #b3b3b3;
+}
+
+@mixin artist__container--with {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: pxTorem(47, rem) auto;
+    grid-template-areas:
+        "with__header      with__header     with__header"
+        "with__playlist    with__playlist   with__playlist";
+    margin-top: 20px;
+}
+
+
+@mixin with__header {
+    grid-area: with__header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 18px;
+    height: 42px;
+}
+
+@mixin with__playlist ($justifycontent: space-evenly, $margin: pxTorem(0, rem)) {
+    grid-area: with__playlist;
+    display: flex;
+    justify-content: $justifycontent;
+    margin: $margin;
+}
+
+@mixin with__playlist--card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@mixin playlist-name {
+    margin: 7px 0px;
+    text-transform: capitalize;
+}
+
+@mixin playlist-description {
+    font-size: 0.875rem;
+    color: #b3b3b3;
+    margin: 0px;
+}
+
+@mixin icon-play {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -32%;
+    right: -72%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+@mixin transitionScaleHover ($scale: 105%, $transition: all .2s) {
+    scale: $scale;
+    transition: $transition;
+}
+
+@mixin scaleTransitionBorderHover ($scale: 105%, $transition: all .2s ease, $border: .1px solid #e3e3e3) {
+    scale: $scale;
+    transition: $transition;
+    border: $border;
+}
+
+@mixin cover-song {
+    width: 100%;
+    border-radius: 4px;
+}
+
+@mixin add-circle__icon {
+    width: 16px;
+    height: 16px;
+}
+
+@mixin options {
+    border: none;
+    margin: 0px;
+    width: 26px;
+}
+
+@mixin opacityTransitionHover {
+    opacity: 1;
+    transition: all .2s ease;
+}
+
+@mixin widthBorderR ($width: 100%, $border-radius: 6px) {
+    width: $width;
+    border-radius: $border-radius;
+}
+
+@mixin widhtHeight ($width: pxTorem(192, rem), $height: pxTorem(192, rem)) {
+    width: $width;
+    height: $height;
+}
+
+@mixin about__container {
+    grid-area: with__playlist;
+    display: flex;
+    margin: pxTorem(10, rem) pxTorem(20, rem);
+    box-sizing: border-box;
+}
+
+@mixin about__container--card {
+    display: grid;
+    flex-direction: column;
+    padding: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: rgba(179, 179, 179, .2);
+    border-radius: pxTorem(8, rem);
+    scale: 100%;
+    transition-property: scale;
+    transition-duration: 1s;
+}
+
+@mixin about-description {
+    margin-top: 5px;
+    text-align: justify;
+}
+
+@mixin monthly-listeners {
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+
+@mixin promotions__container {
+    grid-area: with__playlist;
+    display: flex;
+    margin: pxTorem(5, rem) pxTorem(20, rem);
+    box-sizing: border-box;
+}
+
+@mixin promotions__container--card {
+    display: grid;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: pxTorem(8, rem);
+    grid-template-columns: 60px 1fr 30px;
+    grid-template-rows: auto;
+    grid-template-areas: "product_cover product_title"
+        "product_cover product_title"
+        "product_cover product_title";
+    align-items: center;
+}
+
+@mixin artist__container--promotions {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin promotions-title {
+    grid-area: product_title;
+    text-decoration: none;
+    color: #ffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+@mixin promotions-description {
+    text-align: justify;
+    grid-area: product_title;
+    font-size: 0.875rem;
+    color: #b3b3b3;
+    margin-top: 22px;
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+
+@mixin external-link {
+    display: flex;
+    opacity: 0;
+}
+
+@mixin social-media {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin icon-media {
+    width: 40px;
+    height: 40px;
+    margin-right: 0rem;
+    cursor: pointer;
+    background-color: #3b3434;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+@mixin artist__container--links {
+    display: flex;
+    padding: 20px 10px;
+    padding-bottom: 40px;
+    margin: 30px 3.5%;
+    border-bottom: 1px solid #2a2a2a;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+@mixin links {
+    padding: 5px;
+}
+
+@mixin links__extra {
+    list-style: none;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+@mixin links__extra--title {
+    margin: 10px 0px;
+}
+
+@mixin links__extra--link {
+    color: #b3b3b3;
+    margin: 13px 0px;
+}
+
+@mixin artist__container--legal {
+    display: flex;
+    padding: 0px 10px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    margin: 0px 2.5%;
+    justify-content: space-evenly;
+}
+
+@mixin legal__links {
+    font-size: small;
+    display: flex;
+    text-align: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    width: 467px;
+}
+
+@mixin legal__links--a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-weight: 500;
+    padding: 5px;
+}
+
+@mixin legal__spotify--p {
+    margin: 0px 0px;
+    font-weight: 500;
+    font-size: small;
+    padding: 5px;
+    color: #b3b3b3;
+}
+
+@mixin aside__info-artist {
+    padding: 0.5rem 0.75rem;
+    background-color: #121212;
+    display: flex;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 0.625rem;
+    flex-direction: column;
+    grid-area: aside__info-artist;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+@mixin container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    background-color: #121212;
+    top: -2%;
+}
+
+@mixin h4-title {
+    margin-top: 10px;
+}
+
+@mixin icon-options {
+    display: flex;
+    gap: 20px;
+    width: 27%;
+}
+
+@mixin container-song {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@mixin container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin h2-container-footer {
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+@mixin h4-container-footer {
+    margin-top: 5px;
+    color: #b3b3b3;
+}
+
+@mixin aside__info-artist--about {
+    background-color: #242424;
+    border-radius: 6px;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+@mixin h4-artist-about__title {
+    margin: 10px 5px;
+
+}
+
+@mixin artist-about__icon {
+    display: flex;
+    margin: 10px 5px;
+}
+
+@mixin h4-artist-about__name {
+    margin: 10px 5px;
+    margin-bottom: 0px;
+}
+
+@mixin artist-about__listeners {
+    display: flex;
+    align-items: center;
+}
+
+@mixin p-artist-about__listeners {
+    color: #b3b3b3;
+    margin: 10px 5px;
+    width: 120px;
+}
+
+@mixin p-artist-about__info {
+    color: #b3b3b3;
+    margin: 10px 5px;
+    font-size: 0.875rem;
+}
+
+@mixin aside__info-artist--credits {
+    background-color: #242424;
+    border-radius: 6px;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+@mixin credits__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+@mixin info__container {
+    display: grid;
+    grid-template-columns: 37% 63%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 'name button'
+        'description button';
+    margin: 10px 5px;
+}
+
+@mixin info__container--artist {
+    grid-area: name;
+    text-decoration: none;
+    color: #ffff;
+}
+
+@mixin info__container--description {
+    margin: 5px 0px;
+    grid-area: description;
+    color: #b3b3b3;
+    font-size: small;
+    font-weight: 700;
+}
+
+@mixin more-credits__container {
+    display: flex;
+    margin: 0px 5px;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+@mixin more-credits__container--description {
+    margin: 0px;
+    color: #b3b3b3;
+    font-size: small;
+    font-weight: 700;
+}
+
+@mixin aside__info-artist--next-song {
+    background-color: #242424;
+    border-radius: 6px;
+    display: flex;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+@mixin card-song__container {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin name-song {
+    margin: 0px 0px;
+    font-weight: 600;
+}
+
+@mixin name-artist {
+    margin: 0px 0px;
+    font-size: 14px;
+    color: #b3b3b3;
+    font-weight: 600;
+}
+
+@mixin more-icon {
+    width: 20px;
+    height: 20px;
+    scale: 100%;
+}
+
+@mixin container-img ($width: 100%, $border-radius: pxTorem(6, rem), $height: 100%) {
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+}
+
+@mixin footer-player {
+    background-color: #000000;
+    grid-area: footer__player;
+}
+
+@mixin footer-player__container-icons {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+@mixin footer-player__container-icons--left {
+    display: flex;
+    align-items: center;
+    width: 367px;
+}
+
+@mixin song-info__h5 {
+    margin-bottom: 2px;
+    margin: 0 15px;
+}
+
+@mixin song-info__h6 {
+    margin: 0px;
+    margin-top: 2px;
+    margin-left: 15px;
+    color: #a7a7a7;
+}
+
+@mixin footer-player__container-icons--center {
+    width: 499px;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin icons-control-player {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@mixin song-duration {
+    display: flex;
+    color: #a7a7a7;
+}
+
+@mixin song-duration-p {
+    margin: 5px 10px;
+    font-size: 0.75rem;
+}
+
+@mixin footer-player__container-icons--right {
+    display: flex;
+    align-items: center;
+    width: 375px;
+    justify-content: flex-end;
+}
+
+@mixin volume {
+    display: flex;
+    width: 125px;
+    margin-right: 8px;
+}
+
+@mixin progress-bar-container ($width: 100%) {
+    width: $width;
+    height: 1.5625rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+@mixin white-point ($width:15px, $height:15px) {
+    width: $width;
+    height: $height;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #ffff;
+    opacity: 0;
+    position: relative;
+    right: -3%;
+}
+
+@mixin progress-bar-html {
+    background-color: #ffffff4d;
+    height: 4px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+@mixin icon-options-player-volume {
+    width: 1rem;
+    height: 1rem;
+    margin: 0px 8px;
+}
+
+@mixin footer-player__container-icons--right {
+    display: flex;
+    align-items: center;
+    width: 375px;
+    justify-content: flex-end;
+}
+
+@mixin volume {
+    display: flex;
+    width: 125px;
+    margin-right: 8px;
+}
+
+@mixin icon-options-player-icons-volume {
+    width: 1rem;
+    height: 1rem;
+    margin: 0px 8px;
+}
+
+@mixin icon-options-player-volume {
+    width: 1.5625rem;
+    height: 1.5625rem;
+    margin-left: 8px;
+    display: flex;
+}
+
+
+/*-------------------mixin de media queries----------------- */
+
+@mixin size1182px {
+@media screen and (max-width: 1182px) {
+    @content;
+}
+
+}
+
+@mixin size1020px {
+    @media screen and (max-width: 1124px) and (min-width: 500px){
+        @content;
+    }
+    
+    }
+
+
+/*----------------------extends---------------------------- */
+
+
+%info__container--app {
+    grid-area: button;
+    align-self: center;
+    margin-right: 10px;
+}
+
+%fontStyle {
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #b3b3b3;
+}
+
+%fontStyleArtist {
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $color;
+}
+
+%flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+%buttonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+%hoverwhite2seg {
+    color: white;
+    transition: all .2s ease;
+}
+
+%artistName {
+    font-size: 6rem;
+    margin: 0px;
+}
+
+%scrollBar {
+    width: 0.4375rem;
+    background-color: #121212;
+}
+
+%scrollBarHover {
+    background-color: rgba(179, 179, 179, .2);
+    border-radius: 0.5882rem;
+}
+
+%gridSongsCardHover {
+    background-color: rgba(179, 179, 179, .2);
+    border-radius: 4px;
+    transition: all .1s ease;
+}
+
+%iconsOptionsHover {
+    visibility: visible;
+}
+
+%moreHover {
+    text-decoration: underline;
+}
+
+%showAllHover {
+    text-decoration: underline;
+}
+
+%discographyAlbumsCardHover {
+    background-color: #54545433;
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+%iconDiscHover {
+    border-radius: 50%;
+    background-color: #343030;
+    transition: all .10s linear;
+}
+
+%userButtonsHover {
+    background-color: #3a3434;
+    transition: all .2s ease;
+}
+
+%recentHover {
+    color: #fff;
+    transition: all .2s ease;
+}
+
+%cardHover {
+    cursor: pointer;
+    background-color: #ffffff12;
+    transition: all .2s ease;
+    border-radius: 10px;
+}
+
+%scaleCardAboutHover {
+    scale: 102%;
+}
+
+%promotionsContainerHover {
+    background-color: rgba(179, 179, 179, .2);
+}
+
+%linksExtraLinkhover {
+    color: #ffff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+%link-a-Hover {
+    color: #ffff;
+}
+
+%underlineHover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+%displayFlexAsideDerecho {
+    display: flex;
+}
+
+%margin0px {
+    margin: 0px;
+}
+
+%margin5px {
+    margin: 5px 5px;
+}
+
+%cardCongContainerHover {
+    border-radius: 6px;
+    background-color: rgba(179, 179, 179, .2);
+    transition: all .1s ease;
+}
+
+%moreIconHover {
+    scale: 110%;
+    transition: scale 2seg ease;
+    cursor: pointer;
+}
+
+%xIconHover {
+    border-radius: 50%;
+    background-color: #313131;
+    cursor: pointer;
+}
+
+%h4ArtistAboutNameHover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+%showAllHover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #ffff;
+    scale: 105%;
+}
+
+%icons-volume {
+    display: flex;
+}
+
+%icon-album-player-margin {
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+}
+
+%icon-options-player-margin {
+    margin: 0px 22px;
+}
+
+%icon-options-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%whitePointHover {
+    opacity: 1;
+    right: -89%;
+}
+
+/*------------ funciones ----------*/
+
+@function pxTorem ($valuepx, $unit) {
+    $result: calc($valuepx / 16);
+    @return $result +$unit;
+}

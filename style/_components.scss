@@ -1,0 +1,978 @@
+/* estilos de botones e imagnes del aside izquierdo*/
+
+.aside {
+
+    &__user {
+
+        i {
+            @include iconSize (1.75rem, 1.75rem);
+
+            img {
+                @include img-total-width;
+            }
+        }
+    }
+
+    .container-user {
+
+        &__icon {
+
+            &--disc {
+                i {
+                    @include iconSize (1.75rem, 1.75rem);
+
+                    img {
+                        @include img-total-width;
+                    }
+                }
+            }
+
+            &--plus {
+
+                i {
+                    @include iconSize (1.75rem, 1.75rem);
+
+                    &:hover {
+                        @extend %iconDiscHover;
+                    }
+
+                    img {
+                        width: $widthTotal;
+                    }
+                }
+            }
+        }
+
+        &__buttons {
+
+            [type="button"] {
+                @include buttons-library;
+
+                &:hover {
+                    @extend %userButtonsHover;
+                }
+
+                @include size1020px {
+                    display: none;
+                }
+            }
+
+
+        }
+
+
+
+        &__artist {
+
+            .container-user__icon--secondary {
+                i {
+                    @include iconSize (1.3rem, 1.3rem);
+
+                    &:hover {
+                        @extend %iconDiscHover
+                    }
+
+                    img {
+                        width: $widthTotal;
+                    }
+                }
+
+                ul {
+                    a {
+                        &:hover {
+                            @extend %recentHover;
+                        }
+                    }
+                }
+            }
+
+            .artist-card {
+
+                &:hover {
+                    @extend %cardHover;
+                }
+
+                i {
+                    @include iconSize (3rem, 3rem);
+
+                    img {
+                        @include img-circle;
+                    }
+                }
+
+                &__info {
+                    a {
+                        @extend %fontStyleArtist;
+                        @include aStyles;
+
+                        &:active {
+                            color: #1ed760;
+                        }
+
+                    }
+
+                    p {
+                        @include pStyle (500, 0.875rem, 0px, 0px)
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*-------------------------- Estilos de botones e imagenes de la seccion de artista--------------------- */
+
+
+.artist {
+    &__container {
+
+        /*-------------------------- Estilos de botones e imagenes del banner--------------------- */
+
+        &--banner {
+            .nav__buttons {
+                &-left-right {
+                    i {
+                        @include iconSize (1.75rem, 1.75rem);
+
+                        img {
+                            width: $widthTotal;
+                        }
+                    }
+
+                    @include size1182px {
+                        i:nth-child(2) {
+                            width: 0px;
+                        }
+
+                    }
+                }
+
+                &-premium {
+                    [type="button"] {
+                        @include buttons-nav;
+
+                        &:hover {
+                            @include transitionScaleHover;
+                        }
+                    }
+
+                    .nav__button-premium--app {
+                        [type="button"] {
+                            @include buttons-app;
+
+                            &:hover {
+                                @include transitionScaleHover;
+                            }
+
+                            i {
+                                @include iconSize (pxTorem(15, rem), pxTorem(15, rem));
+
+                                img {
+                                    width: $widthTotal;
+                                }
+                            }
+                        }
+                    }
+
+                    i {
+                        @include iconSize (pxTorem(27.2, rem), pxTorem(27.2, rem));
+
+                        &:hover {
+                            @include transitionScaleHover (110%);
+                        }
+
+                        .bell-icon {
+                            @include icons-circle;
+                        }
+
+                        .user-icon {
+                            @include icons-circle(pxTorem(2, rem));
+                        }
+                    }
+                }
+            }
+        }
+
+        /*-------------------------- Estilos de botones e imagenes de la seccion de reproduccion--------------------- */
+
+        &--play {
+            div {
+                .icon-play {
+                    @include iconSize (pxTorem(50, rem), pxTorem(50, rem), 20px);
+
+                    img {
+                        width: $widthTotal;
+                    }
+                }
+
+                [type="button"] {
+                    @include buttons-app(6rem, 2rem, pxTorem(20, rem), 0.1px solid #c7c7c7, rgba(33, 32, 32, 0.1));
+
+                    &:hover {
+                        @include scaleTransitionBorderHover;
+                    }
+                }
+
+                .icon-more {
+                    @include iconSize (pxTorem(30, rem), pxTorem(30, rem));
+
+                    &:hover {
+                        @include transitionScaleHover (110%);
+                    }
+
+                    img {
+                        width: $widthTotal;
+                    }
+                }
+            }
+
+            /*-------------------------- Estilos de botones e imagenes de la canciones populares--------------------- */
+
+            .grid-popular {
+                &__songs {
+                    &--card {
+                        .song {
+                            &__icon-cover {
+                                @include iconSize (pxTorem(40, rem), pxTorem(40, rem), pxTorem(12, rem));
+
+                                .cover-song {
+                                    @include cover-song;
+                                }
+                            }
+                        }
+
+                        .duration {
+
+                            .add-circle__icon {
+                                @include add-circle__icon;
+
+                                img {
+                                    width: $widthTotal;
+                                }
+                            }
+
+
+                            .options {
+                                @include options;
+
+                                &__icon {
+                                    @include add-circle__icon;
+
+                                    img {
+                                        width: $widthTotal;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /*-------------------------- Estilos de botones e imagenes de la discografia--------------------- */
+
+        &--discography {
+
+            .discography__nav--buttons {
+
+                [type="button"]:nth-child(1) {
+                    @include discography__nav--buttons (pxTorem(180, rem));
+
+                    &:hover {
+                        @extend %userButtonsHover;
+                    }
+                }
+
+                [type="button"]:nth-child(2) {
+                    @include discography__nav--buttons;
+
+                    &:hover {
+                        @extend %userButtonsHover;
+                    }
+                }
+
+                [type="button"]:nth-child(3) {
+                    @include discography__nav--buttons (pxTorem(116, rem));
+
+                    &:hover {
+                        @extend %userButtonsHover;
+                    }
+                }
+
+            }
+
+            .discography__albums {
+                &--card {
+                    .icon-play {
+                        @include icon-play;
+
+                        &:hover {
+                            @include opacityTransitionHover;
+
+                        }
+
+                        .img-play {
+                            width: $widthTotal;
+                        }
+
+                        @include size1020px {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+
+                    .icon-cover-album {
+                        @include widhtHeight;
+
+                        .cover-album {
+                            @include widthBorderR;
+                        }
+
+                        @include size1020px {
+                            width: 11.125rem;
+                            height: 11.125rem;
+                        }
+                    }
+
+                    @include size1020px {
+                        padding: 0px;
+                    }
+
+                }
+            }
+        }
+
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "Con Mano Negra" */
+
+        &--with {
+
+            .with__playlist {
+                &--card {
+                    .icon-cover-playlist {
+                        @include widhtHeight;
+
+                        .cover-playlist {
+                            @include widthBorderR;
+                        }
+
+                        @include size1020px {
+                            width: 11.125rem;
+                            height: 11.125rem;
+                        }
+
+                    }
+
+                    .icon-play {
+                        @include icon-play;
+
+                        &:hover {
+                            @include opacityTransitionHover;
+
+                        }
+
+                        .img-play {
+                            width: $widthTotal;
+
+                        }
+
+                        @include size1020px {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+
+
+
+
+                }
+            }
+        }
+
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "a los fans tambien les gusta"*/
+
+        &--fans {
+
+            .fans__playlist {
+                &--card {
+                    .icon-cover-artist-with {
+                        @include widhtHeight;
+
+                        .cover-artist-with {
+                            @include widthBorderR (100%, 50%);
+
+                        }
+
+                        @include size1020px {
+                            width: 11.125rem;
+                            height: 11.125rem;
+                        }
+                    }
+
+                    .icon-play {
+                        @include icon-play;
+
+                        &:hover {
+                            @include opacityTransitionHover;
+
+                        }
+
+                        .img-play {
+                            width: $widthTotal;
+
+
+                        }
+
+                        @include size1020px {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+
+
+
+
+                }
+            }
+        }
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "aparece en"*/
+
+        &--appears {
+
+            .appears__playlist {
+                &--card {
+                    .icon-cover-album-appears {
+                        @include widhtHeight;
+
+                        .cover-album-appears {
+                            @include widthBorderR;
+
+                        }
+
+                        @include size1020px {
+                            width: 11.125rem;
+                            height: 11.125rem;
+                        }
+                    }
+
+                    .icon-play {
+                        @include icon-play;
+
+                        &:hover {
+                            @include opacityTransitionHover;
+
+                        }
+
+                        .img-play {
+                            width: $widthTotal;
+
+
+                        }
+
+                        @include size1020px {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "playlist del artista"*/
+
+        &--playlist-artist {
+
+            .playlist-artist__playlist {
+                &--card {
+                    .icon-cover-playlist-artist {
+                        @include widhtHeight;
+
+                        .cover-playlist-artist {
+                            @include widthBorderR;
+
+                        }
+
+                        @include size1020px {
+                            width: 11.125rem;
+                            height: 11.125rem;
+                        }
+                    }
+
+                    .icon-play {
+                        @include icon-play;
+
+                        &:hover {
+                            @include opacityTransitionHover;
+
+                        }
+
+                        .img-play {
+                            width: $widthTotal;
+
+
+                        }
+
+                        @include size1020px {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "se puede encontrar en" */
+
+        &--found-in {
+
+            .found-in__playlist {
+                &--card {
+                    .icon-cover-playlist {
+                        @include widhtHeight;
+
+                        .cover-playlist {
+                            @include widthBorderR;
+                        }
+
+                        @include size1020px {
+                            width: 11.125rem;
+                            height: 11.125rem;
+                        }
+                    }
+
+                    .icon-play {
+                        @include icon-play;
+
+                        &:hover {
+                            @include opacityTransitionHover;
+
+                        }
+
+                        .img-play {
+                            width: $widthTotal;
+
+
+                        }
+
+                        @include size1020px {
+                            width: 3rem;
+                            height: 3rem;
+                        }
+                    }
+
+                    @include size1020px {
+                        padding: 0px;
+                    }
+
+
+                }
+            }
+        }
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "acerca de" */
+
+        &--about {
+
+            .about__container {
+                &--card {
+                    .icon-cover-logo {
+                        @include widhtHeight;
+
+                        .cover-logo {
+                            @include widthBorderR ($width: 100%, $border-radius: 50%);
+                        }
+                    }
+                }
+            }
+        }
+
+        /*--------------------------- Estilos de imagenes y botones de la seccion "Articulos de promocion" */
+
+        &--promotions {
+
+            .promotions__container {
+                &--card {
+                    .icon-cover-logo {
+                        @include iconSize (pxTorem(48, rem), pxTorem(48, rem), pxTorem(12, rem));
+                        grid-area: product_cover;
+
+                        .cover-logo {
+                            @include cover-song;
+                        }
+                    }
+
+                    .external-link {
+                        a {
+                            display: flex;
+
+                            .icon-cover-logo {
+                                @include iconSize (pxTorem(20, rem), pxTorem(20, rem), pxTorem(12, rem));
+                                grid-area: product_cover;
+
+                                .cover-logo {
+                                    @include cover-song;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        /* ---------------- estrcutura de "Links" --------- */
+
+        &--links {
+            .social-media {
+                &__icon {
+                    @include icon-media;
+
+                    &:hover {
+                        background-color: #5c5b5b;
+                    }
+
+                    img {
+                        width: 50%;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+/*-------------------------- Estilos de botones e imagenes de la seccion de aside derecho--------------------- */
+
+.aside__info-artist {
+
+    /*-------------------------- Estilos de botones e imagenes de la seccion de header--------------------- */
+
+
+    .container-header {
+
+        &__icons {
+            .more-icon {
+                @include more-icon;
+
+                &:hover {
+                    @extend %moreIconHover;
+                }
+
+                img {
+                    width: $widthTotal;
+                }
+            }
+
+            .x-icon {
+                @include widhtHeight (pxTorem(20, rem), pxTorem(20, rem));
+
+                &:hover {
+                    @extend %xIconHover;
+                    ;
+                }
+
+                img {
+                    width: $widthTotal;
+                }
+            }
+        }
+    }
+
+    /*-------------------------- Estilos de botones e imagenes de la seccion de cancion--------------------- */
+
+
+    &--song {
+
+        .container-song {
+            .icon-cover {
+                @include widhtHeight (pxTorem(248, rem), pxTorem(248, rem));
+
+                .album-cover {
+                    @include container-img (100%, pxTorem(6, rem));
+                }
+            }
+        }
+
+        .container-footer {
+            &__icons {
+                .icon-options {
+                    @include widhtHeight (pxTorem(16, rem), pxTorem(16, rem));
+
+                    img {
+                        width: $widthTotal;
+
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+            }
+        }
+
+    }
+
+    /*-------------------------- Estilos de botones e imagenes de la seccion de aerca del artista--------------------- */
+
+
+    &--about {
+
+        .artist-about__icon {
+            &--cover {
+                @include widhtHeight (pxTorem(80, rem), pxTorem(80, rem));
+
+                .cover-artist-about {
+                    @include container-img (100%, 50%);
+                }
+            }
+        }
+
+        .artist-about__listeners {
+            [type="button"] {
+                @include buttons-app(100%, 2rem, pxTorem(3.2, rem), 0.1px solid #c7c7c7, rgba(33, 32, 32, 0.1));
+
+                &:hover {
+                    @include scaleTransitionBorderHover;
+                }
+            }
+        }
+    }
+
+    /*-------------------------- Estilos de botones e imagenes de la seccion de creditos--------------------- */
+
+    .aside__info-artist--credits {
+        .info__container {
+            [type="button"] {
+                @include buttons-app(100%, 2rem, pxTorem(3.2, rem), 0.1px solid #c7c7c7, rgba(33, 32, 32, 0.1));
+                @extend %info__container--app;
+
+                &:hover {
+                    @include scaleTransitionBorderHover;
+                }
+            }
+        }
+    }
+
+    /*-------------------------- Estilos de botones e imagenes de la seccion de siguiente en la fila--------------------- */
+
+    .aside__info-artist--next-song {
+        .card-song__container {
+            &--play {
+                @include widhtHeight (pxTorem(16, rem), pxTorem(16, rem));
+
+                img {
+                    width: $widthTotal;
+                }
+            }
+
+            &--icon {
+                @include widhtHeight (pxTorem(46, rem), pxTorem(46, rem));
+
+                img {
+                    @include container-img (100%, pxTorem(4, rem));
+                }
+            }
+        }
+    }
+
+}
+
+/*-------------------------- Estilos de botones e imagenes del reproductor--------------------- */
+
+
+.footer-player {
+    &__container-icons {
+
+        &--left {
+            .icon-album-player {
+                @include widhtHeight (pxTorem(56, rem), pxTorem(56, rem));
+                @extend %icon-album-player-margin;
+
+                &__img {
+                    @include container-img (100%, pxTorem(4, rem));
+                }
+            }
+
+            .icon-options-player {
+                @include widhtHeight (pxTorem(16, rem), pxTorem(16, rem));
+                @extend %icon-options-player-margin;
+
+                &__img {
+                    @include container-img (100%, pxTorem(4, rem));
+
+                }
+
+                &:hover {
+                    @extend %moreIconHover;
+                }
+            }
+        }
+
+        &--center {
+
+            .icons-control-player {
+                .icon-options-player:nth-child(1) {
+                    @include widhtHeight (pxTorem(16, rem), pxTorem(16, rem));
+
+                    .icon-options-player__img {
+                        @include container-img (100%, pxTorem(0, rem));
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+
+                .icon-options-player:nth-child(2) {
+                    @include widhtHeight (pxTorem(25, rem), pxTorem(25, rem));
+
+                    .icon-options-player__img {
+                        @include container-img (100%, pxTorem(0, rem));
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+
+                .icon-options-player {
+                    @include widhtHeight (pxTorem(32, rem), pxTorem(32, rem));
+
+                    &__img {
+                        @include container-img (100%, pxTorem(0, rem));
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+
+                .icon-options-player:nth-child(4) {
+                    @include widhtHeight (pxTorem(25, rem), pxTorem(25, rem));
+
+                    .icon-options-player__img {
+                        @include container-img (100%, pxTorem(0, rem));
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+
+                .icon-options-player:nth-child(5) {
+                    @include widhtHeight (pxTorem(32, rem), pxTorem(32, rem));
+                    @extend %icon-options-player;
+
+                    .icon-options-player__img {
+                        @include container-img (50%, pxTorem(0, rem), 50%);
+
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+            }
+
+            .song-duration {
+
+                .progress-bar-container {
+
+                    @include progress-bar-container;
+
+                    &:hover {
+                        i {
+                            opacity: 1;
+                        }
+
+                        cursor: pointer;
+                    }
+
+                    .white-point {
+                        @include white-point;
+                    }
+
+                    .progress-bar-html {
+                        @include progress-bar-html;
+                    }
+                }
+            }
+
+
+        }
+
+        &--right {
+
+            .icons-volume {
+                .icon-options-player {
+
+                    @include icon-options-player-icons-volume;
+
+                    &__img {
+                        @include container-img (100%, pxTorem(4, rem));
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+
+            }
+
+            .volume {
+                .icon-options-player {
+
+
+                    &__img {
+                        width: $widthTotal;
+                    }
+
+                    &:hover {
+                        @extend %moreIconHover;
+                    }
+                }
+
+                .progress-bar-container {
+
+                    @include progress-bar-container ($width: 93%);
+
+
+                    &:hover {
+                        i {
+                            @extend %whitePointHover;
+                        }
+
+                        cursor: pointer;
+
+                        .progress-bar-html {
+                            background-color: #1ed760;
+
+                        }
+                    }
+
+                    .white-point {
+                        @include white-point (14px, 12px);
+                    }
+
+                    .progress-bar-html {
+                        @include progress-bar-html;
+
+                    }
+                }
+            }
+
+
+
+
+
+        }
+
+
+    }
+}
